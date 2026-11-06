@@ -1,0 +1,1224 @@
+/* =====================================================================
+   SISTEMA DE GESTÃO DE VIATURAS - folha de estilo única
+   (provisória: será substituída pelo padrão visual do formador)
+   ===================================================================== */
+
+:root {
+    --escuro: #1f2430;
+    --escuro-2: #2a3040;
+    --acento: #c0392b;
+    --acento-hover: #a93226;
+    --verde: #2e8b57;
+    --verde-hover: #25744a;
+    --azul: #2f6fb3;
+    --azul-hover: #265a93;
+    --fundo: #f3f4f7;
+    --branco: #ffffff;
+    --borda: #dde0e6;
+    --texto: #1d2230;
+    --texto-medio: #4a5163;
+    --texto-claro: #7a8194;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Trebuchet MS', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--fundo);
+    color: var(--texto);
+    min-height: 100vh;
+}
+
+/* ---------- Menu lateral ---------- */
+
+.cartao {
+    background-color: #ffffff;
+    padding: 25px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    margin: 25px auto;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+.navbar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: var(--escuro);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 0 16px;
+    overflow: hidden;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 20px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 12px;
+}
+
+.marca-logo {
+    height: 38px;
+    width: auto;
+}
+
+.titulo-marca {
+    font-weight: bold;
+    font-size: 12.5px;
+    line-height: 1.35;
+    letter-spacing: 0.6px;
+}
+
+.navlinks {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+}
+
+.navbar > * {
+    flex-shrink: 0;
+}
+
+.grupoMenu {
+    padding: 16px 20px 6px;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #7f8aa3;
+}
+
+.navbar a {
+    display: block;
+    color: #c9cfdd;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-left: 3px solid transparent;
+}
+
+.navbar a:hover {
+    background-color: var(--escuro-2);
+    color: #ffffff;
+}
+
+.navbar a.on {
+    background-color: var(--escuro-2);
+    color: #ffffff;
+    border-left-color: var(--acento);
+    font-weight: 600;
+}
+
+.menuRodape .sair {
+    background-color: rgba(139, 2, 2, 0.329);
+}
+
+/* ---------- Barra superior (nome do utilizador e perfil) ---------- */
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 250px;
+    right: 0;
+    height: 60px;
+    z-index: 90;
+    background-color: #263041;
+    border-bottom: 1px solid #d5d4d6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 44px;
+}
+
+.topbarTitulo {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+}
+
+.topbarUtilizador {
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 12px;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--branco);
+    color: #a30909;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topbarDados {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    line-height: 1.1;
+    font-size: 13.5px;
+}
+
+.topbarLink {
+    margin-left: 10px;
+    padding: 7px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: var(--texto-medio);
+    text-decoration: none;
+    background-color: #eef0f4;
+}
+
+.topbarLink:hover {
+    background-color: #e0e3ea;
+}
+
+.topbarSair {
+    margin-left: 0;
+    color: var(--acento);
+    background-color: rgba(192, 57, 43, 0.1);
+}
+
+.topbarSair:hover {
+    background-color: var(--acento);
+    color: #ffffff;
+}
+
+/* ---------- Área principal ---------- */
+
+.mae {
+    margin-left: 250px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 92px 28px 40px;
+}
+
+.cabecalho {
+    position: sticky;
+    top: 60px;
+    z-index: 10;
+    background-color: var(--fundo);
+    padding-top: 4px;
+    margin-bottom: 24px;
+}
+
+.abas {
+    display: flex;
+    gap: 28px;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-bottom: 2px solid var(--borda);
+}
+
+.aba {
+    padding: 10px 2px;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    color: var(--texto-claro);
+    text-decoration: none;
+}
+
+a.aba:hover {
+    color: var(--texto);
+}
+
+.abaAtiva {
+    color: var(--texto);
+    font-weight: bold;
+    border-bottom: 3px solid var(--acento);
+    margin-bottom: -2px;
+}
+
+.dalheee {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 26px 24px;
+    box-shadow: 0 4px 18px rgba(31, 36, 48, 0.06);
+}
+
+.topo {
+    margin-bottom: 22px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #eceef2;
+}
+
+.topoSeparado {
+    margin-top: 36px;
+}
+
+.titulo {
+    font-size: 20px;
+    color: var(--texto);
+}
+
+/* ---------- Formulários ---------- */
+
+.linha {
+    display: flex;
+    gap: 20px;
+}
+
+.linhaFiltro {
+    align-items: flex-end;
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+.campoFlex {
+    flex: 1;
+    min-width: 0;
+}
+
+.campoBusca {
+    width: 300px;
+}
+
+.campoTipo {
+    margin-bottom: 6px;
+}
+
+.label {
+    display: block;
+    font-size: 13px;
+    color: var(--texto-medio);
+}
+
+.input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #c9cdd6;
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--texto);
+    background-color: #ffffff;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(47, 111, 179, 0.15);
+}
+
+.input:disabled {
+    background-color: #eef0f4;
+    color: #4a5163;
+    cursor: not-allowed;
+}
+
+.acao {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.nota {
+    margin-bottom: 18px;
+    font-size: 13px;
+    color: var(--texto-claro);
+}
+
+.aviso {
+    margin: 4px 0 18px;
+    padding: 10px 14px;
+    background-color: #fff6e0;
+    border-left: 4px solid #e0a800;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #6b5200;
+}
+
+/* ---------- Botões ---------- */
+
+.botao {
+    display: inline-block;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--verde);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.botao:hover {
+    background-color: var(--verde-hover);
+}
+
+.botaoAzul {
+    background-color: var(--azul);
+}
+
+.botaoAzul:hover {
+    background-color: var(--azul-hover);
+}
+
+.botaoVermelho {
+    background-color: var(--acento);
+}
+
+.botaoVermelho:hover {
+    background-color: var(--acento-hover);
+}
+
+.botaoCancelar {
+    background-color: #e4e7ed;
+    color: var(--texto-medio);
+}
+
+.botaoCancelar:hover {
+    background-color: #d3d7df;
+}
+
+/* ---------- Tabelas ---------- */
+
+.tabela {
+    width: 100%;
+    max-height: calc(100vh - 360px);
+    min-height: 280px;
+    overflow: auto;
+    border: 1px solid #eceef2;
+    border-radius: 6px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: var(--escuro);
+    color: #ffffff;
+    text-align: left;
+    padding: 10px 8px;
+    font-size: 12.5px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+tbody td {
+    padding: 10px 12px;
+    white-space: nowrap;
+    font-size: 13px;
+    color: var(--texto-medio);
+    border-bottom: 1px solid #eceef2;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f9fb;
+}
+
+tbody tr:hover {
+    background-color: #eff2f8;
+}
+
+.acoes {
+    display: flex;
+    gap: 8px;
+}
+
+.acoes a,
+.acoes button {
+    border: none;
+    border-radius: 5px;
+    padding: 6px 11px;
+    font-size: 12.5px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Botões suaves: ganham cor ao passar o rato */
+.botaoAtualizar {
+    color: #2f6fb3;
+    background-color: rgba(47, 111, 179, 0.12);
+}
+
+.botaoAtualizar:hover {
+    background-color: var(--azul);
+    color: #ffffff;
+}
+
+.botaoResetar {
+    color: #8a6500;
+    background-color: rgba(224, 168, 0, 0.16);
+}
+
+.botaoResetar:hover {
+    background-color: #e0a800;
+    color: #ffffff;
+}
+
+.botaoRemover {
+    color: #c0392b;
+    background-color: rgba(192, 57, 43, 0.12);
+}
+
+.botaoRemover:hover {
+    background-color: var(--acento);
+    color: #ffffff;
+}
+
+/* ---------- Cores ---------- */
+
+.amostra {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    border-radius: 4px;
+    border: 1px solid #c9cdd6;
+    vertical-align: middle;
+}
+
+.paleta {
+    display: block;
+    width: 110px;
+    height: 46px;
+    padding: 3px;
+    border: 1px solid #c9cdd6;
+    border-radius: 6px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.paleta:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.botao:disabled {
+    background-color: #b9bfcb;
+    cursor: not-allowed;
+}
+
+/* ---------- Perfis (etiquetas coloridas) ---------- */
+
+.perfilTag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    background-color: #e3ebf7;
+    color: #2f5d9e;
+}
+
+/* ---------- Mensagens ---------- */
+
+.mensagem {
+    margin-bottom: 20px;
+    padding: 11px 14px;
+    border-radius: 6px;
+    font-size: 13.5px;
+}
+
+.mensagem.sucesso {
+    background-color: #e3f4ea;
+    border: 1px solid #b6e0c7;
+    color: #1e6b42;
+}
+
+.mensagem.erro {
+    background-color: #fbe6e3;
+    border: 1px solid #f0bdb7;
+    color: #a1281c;
+}
+
+/* ---------- Pop-ups (sem JavaScript: usam :target) ---------- */
+
+.modalFundo {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(20, 24, 34, 0.6);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.modalFundo:target {
+    display: flex;
+}
+
+.modalOverlay {
+    position: absolute;
+    inset: 0;
+}
+
+.modalCaixa {
+    position: relative;
+    width: 100%;
+    max-width: 580px;
+    max-height: 92vh;
+    overflow-y: auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 28px 32px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+}
+
+.modalLargo {
+    max-width: 700px;
+}
+
+.modalPequeno {
+    max-width: 440px;
+}
+
+.modalTopo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eceef2;
+}
+
+.modalFechar {
+    font-size: 22px;
+    line-height: 1;
+    color: var(--texto-claro);
+    text-decoration: none;
+}
+
+.modalFechar:hover {
+    color: var(--texto);
+}
+
+.modalBotoes .botao {
+    padding: 8px 18px;
+    font-size: 13px;
+}
+
+/* ---------- Matriz de permissões ---------- */
+
+.matriz td,
+.matriz th {
+    padding: 8px 12px;
+}
+
+.centro {
+    text-align: center;
+}
+
+.matriz input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--azul);
+    cursor: pointer;
+}
+
+.matriz input[type="checkbox"]:disabled {
+    cursor: not-allowed;
+}
+
+.semAccao {
+    color: #b3b8c6;
+}
+
+/* ---------- Dashboard ---------- */
+.topoDashboard {
+    background: #f3f3f3;
+    padding: 24px 28px;
+    margin-top: 45px;
+    margin-bottom: 35px;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(31, 36, 48, 0.06);
+}
+.estadoTag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11.5px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.estadoAtual {
+    background-color: #dff3e8;
+    color: #25744a;
+}
+
+.estadoPrimeiro {
+    background-color: #fdf0d3;
+    color: #8a6500;
+    margin-top: 4px;
+}
+
+.acoes + .estadoTag {
+    margin-top: 6px;
+}
+
+.topoDashboard h1 {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--texto);
+    margin: 0 0 10px;
+}
+
+.topoDashboard p {
+    margin: 5px 0;
+    color: var(--texto-claro);
+    font-size: 14px;
+}
+
+.topoDashboard .dataDashboard {
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 16px;
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto 28px;
+}
+
+.quadrado {
+    display: block;
+    flex: 0 0 250px;
+    max-width: 250px;
+    box-sizing: border-box;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid var(--borda);
+    border-top: 4px solid var(--acento);
+    border-radius: 8px;
+    padding: 18px 20px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.quadrado:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(31, 36, 48, 0.1);
+}
+
+.legenda {
+    font-size: 13px;
+    color: var(--texto-claro);
+}
+
+.numero {
+    margin-top: 6px;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--texto);
+}
+
+.cardDashboard {
+    margin-top: 6px;
+}
+
+/* ---------- Login / alterar senha ---------- */
+
+.paginaLogin {
+    background-color: var(--escuro);
+}
+
+.maeLogin {
+    margin-left: 0;
+    padding: 0 !important;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+.esquerda {
+    flex: 1.1;
+    background: linear-gradient(160deg, #1f2430 0%, #2b1f26 55%, #5a1f1a 100%);
+    color: #ffffff;
+    padding: 44px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 0.7px;
+    line-height: 1.35;
+}
+
+.logo .marca-logo {
+    height: 46px;
+}
+
+.mensagemLogin h1 {
+    font-size: 38px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    max-width: 460px;
+}
+
+.mensagemLogin p {
+    font-size: 16px;
+    color: #cfc6cb;
+    max-width: 440px;
+    line-height: 1.5;
+}
+
+.direita {
+    flex: 1;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.direita form {
+    width: 100%;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+}
+
+.direita h2 {
+    font-size: 26px;
+    margin-bottom: 6px;
+}
+
+.subtitulo {
+    color: var(--texto-claro);
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.direita label {
+    font-size: 13px;
+    color: var(--texto-medio);
+    margin-bottom: 6px;
+}
+
+.direita input {
+    padding: 11px 12px;
+    border: 1px solid #c9cdd6;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.direita input:focus {
+    outline: none;
+    border-color: var(--acento);
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.15);
+}
+
+.direita button,
+.botaoLink {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--acento);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.direita button:hover,
+.botaoLink:hover {
+    background-color: var(--acento-hover);
+}
+
+.ligacaoVoltar {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--texto-claro);
+    text-decoration: none;
+}
+
+.ligacaoVoltar:hover {
+    color: var(--texto);
+}
+
+.maeCentro {
+    align-items: center;
+    justify-content: center;
+    background-color: var(--escuro);
+}
+
+.cartaoCentro {
+    flex: none;
+    width: 100%;
+    max-width: 460px;
+    border-radius: 10px;
+    padding: 40px;
+}
+
+.logoEscura {
+    color: var(--escuro);
+    margin-bottom: 22px;
+}
+
+.logoEscura .marca-logo {
+    filter: invert(1);
+}
+
+/* ---------- Ecrãs pequenos ---------- */
+
+@media (max-height: 700px) {
+    .navbar a {
+        padding: 7px 20px;
+    }
+
+    .grupoMenu {
+        padding: 10px 20px 4px;
+    }
+
+    .marca {
+        padding-bottom: 14px;
+    }
+}
+
+@media (max-width: 900px) {
+    .topbar {
+        left: 0;
+        padding: 0 16px;
+    }
+
+    .topbarTitulo {
+        display: none;
+    }
+
+    .quadrado {
+        max-width: none;
+    }
+
+    .navbar {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+
+    .topbar {
+        position: static;
+    }
+
+    .mae {
+        margin-left: 0;
+        padding: 24px 16px 40px;
+    }
+
+    .cabecalho {
+        top: 0;
+    }
+
+    .card {
+        padding: 22px 18px;
+    }
+
+    .linha {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .campoBusca {
+        width: 100%;
+    }
+
+    .maeLogin {
+        flex-direction: column;
+    }
+
+    .esquerda {
+        padding: 28px;
+    }
+
+    .mensagemLogin h1 {
+        font-size: 26px;
+    }
+}
+
+.menuRodape {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 8px;
+}
+.grupoAdmin {
+    margin-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.totalRegistos {
+    margin-bottom: 14px;
+    font-size: 13px;
+    color: var(--texto-claro);
+}
+
+
+/* ---------- Login com o visual antigo ---------- */
+
+.paginaLogin {
+    background-color: #1f2430;
+    min-height: 100vh;
+}
+
+.maeLogin {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Lado esquerdo */
+
+.maeLogin .esquerda {
+    flex: 1.1;
+    background: linear-gradient(160deg, #1f2430 0%, #2b1f26 55%, #5a1f1a 100%);
+    color: #ffffff;
+    padding: 44px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.maeLogin .logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 0.7px;
+    line-height: 1.35;
+}
+
+.maeLogin .marca-logo {
+    height: 46px;
+    width: auto;
+}
+
+.maeLogin .mensagemLogin h1 {
+    font-size: 30px;
+    line-height: 1.3;
+    margin-bottom: 14px;
+    max-width: 460px;
+    color: #ffffff;
+}
+
+.maeLogin .mensagemLogin h1 span {
+    color: #e57368;
+}
+
+.maeLogin .mensagemLogin p {
+    font-size: 16px;
+    color: #cfc6cb;
+    max-width: 440px;
+    line-height: 1.5;
+}
+
+/* Lado direito */
+
+.maeLogin .direita {
+    flex: 1;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.maeLogin .direita form {
+    width: 100%;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+}
+
+.maeLogin .auth-logo {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 22px;
+    border-radius: 12px;
+    background-color: rgba(192, 57, 43, 0.10);
+    color: #c0392b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.maeLogin .direita h2 {
+    width: 100%;
+    font-size: 24px;
+    margin-bottom: 6px;
+    color: #1f2430;
+    text-align: center;
+}
+
+.maeLogin .subtitulo {
+    color: #7a8194;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.maeLogin .direita label {
+    font-size: 13px;
+    color: #4a5163;
+    margin-bottom: 7px;
+}
+
+/* Campos com ícones */
+
+.maeLogin .campoLogin {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #c9cdd6;
+    border-radius: 6px;
+    padding: 0 12px;
+    margin-bottom: 18px;
+    background-color: #ffffff;
+}
+
+.maeLogin .campoLogin i {
+    color: #7a8194;
+    font-size: 19px;
+}
+
+.maeLogin .campoLogin input {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #1d2230;
+    font-size: 14px;
+    margin: 0;
+    box-shadow: none;
+}
+
+.maeLogin .campoLogin:focus-within {
+    border-color: #c0392b;
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
+}
+
+/* Botão Entrar */
+
+.maeLogin .auth-botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    margin-top: 4px;
+    border: none;
+    border-radius: 6px;
+    background-color: #17800b;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.maeLogin .auth-botao:hover {
+    background-color: #0e6704;
+}
+
+/* Mensagem de erro */
+
+.maeLogin .mensagem.erro {
+    margin-bottom: 18px;
+    padding: 11px 14px;
+    border-radius: 6px;
+    background-color: #fbe6e3;
+    border: 1px solid #f0bdb7;
+    color: #a1281c;
+    font-size: 13.5px;
+}
+
+/* Rodapé */
+
+.maeLogin .auth-rodape {
+    margin-top: 32px;
+    text-align: center;
+    color: #7a8194;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Ecrãs pequenos */
+
+@media (max-width: 900px) {
+    .maeLogin {
+        flex-direction: column;
+    }
+
+    .maeLogin .esquerda {
+        min-height: 260px;
+        padding: 28px;
+        gap: 35px;
+    }
+
+    .maeLogin .mensagemLogin h1 {
+        font-size: 26px;
+    }
+
+    .maeLogin .direita {
+        flex: 1;
+        padding: 35px 24px;
+    }
+}
+
+/* Centralizar o ícone e o título Iniciar Sessão */
+.auth-logo {
+    margin-left: auto;
+    margin-right: auto;
+}
